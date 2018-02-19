@@ -16,6 +16,6 @@ class PalindromeSentence {
 	     if(!((arr[j]>='a' && arr[j]<='z') || (arr[j]>='0' && arr[j]<='9'))){j--;continue;}
 	     if(arr[i++]!=arr[j--])return 0;
 	  }
-	    return 1;
+	  return 1;
      }
 }
