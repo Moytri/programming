@@ -1,0 +1,31 @@
+/* Given an integer array, find if an integer p exists in the array such that the number of integers greater than p in the array equals to p
+If such an integer is found return 1 else return -1. */
+
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        int [] arr = A.stream().mapToInt(i -> i).toArray();
+        int nobelNumber = 0;
+        Arrays.sort(arr);
+        
+        for(int i = 0; i < arr.length - 1; i++) {
+            
+            /* an asending sorted array may have adjacent repeated value.
+            1 2 3 4 5 6; here 3 is nobel number, but for 1 2 3 3 5 6; 
+            3 is not nobel */
+            
+            if(arr[i] == arr[i + 1]) {  
+                continue;
+            } 
+            
+            /* checks number of greater integer of p in the array eauals p */
+            if(arr[i] == (arr.length - 1 - i)) {
+                return 1;
+            }
+        }
+        
+        if(arr[arr.length - 1] == 0) {
+            return 1;
+        }
+        return -1;
+    }
+}
