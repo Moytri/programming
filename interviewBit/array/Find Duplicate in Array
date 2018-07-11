@@ -1,0 +1,21 @@
+/* Given a read only array of n + 1 integers between 1 and n, find one number that repeats in linear time using less than O(n) space and traversing the stream sequentially O(1) times. */
+
+public class Solution {
+    // DO NOT MODIFY THE LIST
+    public int repeatedNumber(final List<Integer> a) {
+        int [] arr = a.stream().mapToInt(Integer::intValue).toArray();
+        
+        int duplicateElem = -1;
+        
+        Arrays.sort(arr);
+        if(arr.length > 1){
+            for(int i = 0; i < arr.length - 1; i++) {
+                if(arr [i] == arr[i+1]) {
+                    return arr [i];
+                }
+            }
+        }    
+        return duplicateElem;
+    }
+}
+
