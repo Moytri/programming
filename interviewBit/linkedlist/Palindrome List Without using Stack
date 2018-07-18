@@ -1,0 +1,109 @@
+/ * Given a singly linked list, determine if its a palindrome. Return 1 or 0 denoting if its a palindrome or not, respectively.
+
+Notes:
+
+Expected solution is linear in time and constant in space.
+For example,
+
+List 1-->2-->1 is a palindrome.
+List 1-->2-->3 is not a palindrome. */
+
+package iBitList;
+
+import java.util.Stack;
+
+public class ListPalindrome {
+	private static Node head = null;
+	private static Node tail = null;
+	private static int size = 0;
+
+	public static void main(String[] args) {
+		ListPalindrome ls = new ListPalindrome();
+		ls.addFirst(10);
+		ls.addFirst(20);
+		ls.addFirst(20);
+		ls.addFirst(10);
+		ls.addFirst(10);
+		
+		ls.print();
+		System.out.println(isPalindrome());
+
+	}
+	
+	private static boolean isPalindrome() {
+		boolean isPalindrome = false;
+		Node node = head;
+           //new list having one node
+		Node prev = new Node(head.data); 
+		Node next = null;
+		
+	//reverse list by inserting data from the original list
+		while(node.next != null) {
+			next = new Node(node.next.data);
+			next.next = prev;
+			prev = next;
+			node = node.next;
+		}
+		
+		Node listone = head;
+		Node listTwo = prev;
+		while(listTwo != null && listone != null) {
+			if(listTwo != null && listone != null &&    listTwo.data == listone.data) {
+				isPalindrome = true;
+				listone = listone.next;
+				listTwo = listTwo.next;
+			}
+			else {
+				isPalindrome = false;
+				break;
+			}
+		}
+		
+		return isPalindrome;
+	}
+	
+	private boolean isEmpty() {
+		boolean isEmpty = true;		
+		if(size == 0) isEmpty = true;
+		else isEmpty = false;	
+		return isEmpty;
+	}
+		
+	//insert node at the head of SinglyLinkedList
+	private void addFirst(int data) {
+		
+		Node newItem = new Node(data);
+		
+		if(isEmpty()) {
+			head = newItem;
+			size++;
+		}
+		else {
+			newItem.next = head;
+			head = newItem;
+			size++;
+		}
+	}
+			
+	//Print the Elements of a Linked List
+	private void print() {
+		Node node = head;
+		
+		while(node != null) {
+			System.out.print(node.data + " ");
+			node = node.next;
+		}
+		
+		System.out.println();
+	}
+			
+	static class Node {
+		int data;
+		Node next;
+		
+		Node(int data) {
+			this.data = data;
+			this.next = null;
+		}
+	}
+}
