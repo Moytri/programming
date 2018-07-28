@@ -1,0 +1,52 @@
+/* Given a binary tree, return the postorder traversal of its nodes’ values.
+
+Example :
+
+Given binary tree
+
+   1
+    \
+     2
+    /
+   3
+return [3,2,1].
+
+Using recursion is not allowed. */
+
+public class Solution {
+    public ArrayList<Integer> postorderTraversal(TreeNode A) {
+        TreeNode curr = null;
+
+        Stack<TreeNode> stack = new Stack<>();
+        
+        Stack<TreeNode> stack2 = new Stack<>();
+        
+        ArrayList<Integer> ls = new ArrayList<>();
+        
+        if(A != null) {
+            curr = A;
+        }
+           
+        stack.push(curr);
+        
+        while(!stack.empty()) {
+            
+            TreeNode data = stack.pop();
+            stack2.push(data);
+            
+            if(data.left != null) {
+                stack.push(data.left);
+            }
+            
+               if(data.right != null) {
+                stack.push(data.right);
+            }
+        }
+        
+        while(!stack2.empty()) {
+            ls.add(stack2.pop().val);
+        }
+                  
+        return ls;
+    }
+}
