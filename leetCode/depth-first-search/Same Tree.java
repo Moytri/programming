@@ -31,3 +31,63 @@ Input:     1         1
 Output: false
 
 https://leetcode.com/problems/same-tree/description/
+
+Solution In Java :
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        
+        Queue<TreeNode> tree_One = new LinkedList<>();
+        Queue<TreeNode> tree_Two = new LinkedList<>();
+        
+        if(p == null && q == null) return true;
+        
+        if(p != null && q != null) {
+            if(p.val != q.val) {
+                return false;
+            } 
+            else {
+                tree_One.add(p);
+                tree_Two.add(q);
+            }
+        }
+
+            
+        if(p == null && q != null) return false;
+        if(p != null && q == null) return false;
+            
+        while(!tree_One.isEmpty() && !tree_Two.isEmpty()) {
+
+
+            if(tree_One.peek().val != tree_Two.peek().val) return false;
+
+            if((tree_One.peek().left == null && tree_Two.peek().left != null))   return false;
+            if((tree_One.peek().left != null && tree_Two.peek().left == null))   return false;
+            if((tree_One.peek().right == null && tree_Two.peek().right != null)) return false;
+            if((tree_One.peek().right != null && tree_Two.peek().right == null)) return false;
+
+            if(tree_One.peek().left != null && tree_Two.peek().left != null) {                  
+                    tree_One.add(tree_One.peek().left);
+                    tree_Two.add(tree_Two.peek().left);
+            }
+
+            if(tree_One.peek().right != null && tree_Two.peek().right != null) {
+                    tree_One.add(tree_One.peek().right);
+                    tree_Two.add(tree_Two.peek().right);
+            }  
+
+            tree_One.remove();
+            tree_Two.remove();
+        }
+            
+        return true;
+    }
+}
