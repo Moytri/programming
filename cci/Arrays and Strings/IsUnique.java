@@ -18,10 +18,8 @@ public class IsUnique {
 	}
 	
 	//without using additional space
-	private boolean isUnique(String str) {
-		
-		String newStr = str.toLowerCase();
-		
+	private boolean isUnique(String str) {		
+		String newStr = str.toLowerCase();		
 		for(int i = 0; i < newStr.length(); i++) {
 			if(newStr.indexOf(newStr.charAt(i)) == newStr.lastIndexOf(newStr.charAt(i))) continue;
 			else return false;
