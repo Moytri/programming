@@ -52,14 +52,14 @@ public class RemoveDuplicate {
 	//using external space, TC - O(N), SC - O(1)
 	public static void removeDuplicates(Node head) {
 		Set<Node> set = new HashSet<>();
-		Node prev = head;
+		Node prev = null;
 		while(head != null) {
 			if(set.contains(head.val)) {
 				prev.next = head.next;
 			}
 			else {
 				set.add(head);
-				prev = head.next;
+				prev = head;
 			}
 			head = head.next;
 		}
