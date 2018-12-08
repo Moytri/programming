@@ -10,8 +10,8 @@ Output: 8 (the index of 5 in the array)*/
 public class SearchInRotatedArray {
 
 	public static void main(String[] args) {
-		int [] arr = {3,4,5,6,2,1};
-		System.out.println(new SearchInRotatedArray().getIndex(arr, 0, 5, 2));
+		int [] arr = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
+		System.out.println(new SearchInRotatedArray().getIndex(arr, 0, 11, 5));
 	}
 	
 	public int getIndex(int [] arr, int left, int right, int number) {
@@ -41,7 +41,7 @@ public class SearchInRotatedArray {
 			//left portion is shifted sorted
 			if(arr[mid] <= arr[right]) {
 				if(number > arr[mid]) {
-					if(number <= arr[mid] && number <= arr[right]) {
+					if(number >= arr[mid] && number <= arr[right]) {
 						return getIndex(arr,mid + 1,right,number);
 					}
 					else {
