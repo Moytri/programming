@@ -3,13 +3,22 @@ package cciRecursionDP;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PermutationWithoutDuplicate {
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
+class PermutationWithoutDuplicate {
+
+	static int x = 10;
 	public static void main(String[] args) {
 		List<String> ls  = new ArrayList<>();
-		
-		new PermutationWithoutDuplicate().permute("abc", 0, 2);
-		System.out.println(new PermutationWithoutDuplicate().permute("abc", 0, 2, ls));
+		//new PermutationWithoutDuplicate().permute("abc", 0, 2);
+		//System.out.println(new PermutationWithoutDuplicate().permute("abc", 0, 2, ls));
+	}
+	
+	static class S {
+		class P {
+			
+		}
 	}
 	
 	public void permute(String str, int start, int end) {
@@ -23,8 +32,13 @@ public class PermutationWithoutDuplicate {
 				str = swap(str, i, start);
 			}
 		}
+		class P {
+			void show() {
+				System.out.println(x);
+			}
+		}
 	}
-	
+		
     public List<String> permute(String str, int start, int end, List<String> ls) {
         if(start == end) {
             ls.add(str);
@@ -46,7 +60,11 @@ public class PermutationWithoutDuplicate {
         temp = charArray[i] ; 
         charArray[i] = charArray[j]; 
         charArray[j] = temp; 
-        return String.valueOf(charArray); 
+
+        return String.valueOf(charArray);
     } 
+	
+
+	
 
 }
