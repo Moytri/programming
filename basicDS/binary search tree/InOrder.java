@@ -10,10 +10,11 @@ public class InOrder {
 	public static void main(String [] args) {
 		TreeConstruct treeConstruction = new TreeConstruct();
 		InOrder inOrderPrint = new InOrder();
-		int [] arr = {6,1,8,2,10,7,3};
+		int [] arr = {15,2,3,9,7,4,6,13,17,18,20};
 		for(int i = 0; i < arr.length; i++) {
 			treeConstruction.construct(arr[i]);
 		}
+		
 		inOrderPrint.inOrderTraversal(treeConstruction.root);
 		System.out.println();
 		inOrderPrint.inOrder(treeConstruction.root);
