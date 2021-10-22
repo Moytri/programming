@@ -1,5 +1,4 @@
-package leetCode;
-
+package string;
 import java.util.Arrays;
 
 /*https://leetcode.com/problems/permutation-in-string
