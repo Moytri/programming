@@ -18,8 +18,8 @@ public class NumberOfIslandsDFS {
 			{'1','1','0','0','0'},
 			{'0','0','0','0','0'}};
 		
-		numberOfIslands.startRow = 0; numberOfIslands.endRow = grid.length;
-		numberOfIslands.startCol = 0; numberOfIslands.endCol = grid[0].length;
+		numberOfIslands.startRow = 0; numberOfIslands.endRow = grid.length - 1;
+		numberOfIslands.startCol = 0; numberOfIslands.endCol = grid[0].length - 1;
 		
 		int numOfIsland = numberOfIslands.numIslands(grid);	
 		System.out.println(numOfIsland);
