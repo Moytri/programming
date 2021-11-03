@@ -31,7 +31,7 @@ public class WordLadder {
 	
 	public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> dictionary = new HashSet<>(wordList);
-        //System.out.println(dictionary.size());
+
         if (!dictionary.contains(endWord)) return 0;
         
         // add beginWord to the queue for starting the bfs
