@@ -1,5 +1,11 @@
 package slidingWindow;
 
+/**
+ * 
+ * @author Moytri
+ * Problem: https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/
+ *
+ */
 public class SubstringSizeThree {
 
 	public static void main(String[] args) {
