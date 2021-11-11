@@ -9,14 +9,14 @@ import java.util.Map;
  *
  */
 public class EncodeDecodeTinyUrl {
-
+    Map<Integer, String> map = new HashMap();
+    String host = "http://tinyurl.com/";
+    
 	public static void main(String[] args) {
 		EncodeDecodeTinyUrl url = new EncodeDecodeTinyUrl();
 		String tiny = url.encode("https://leetcode.com/problems/design-tinyurl");
 		System.out.println(url.decode(tiny));
 	}
-    Map<Integer, String> map = new HashMap();
-    String host = "http://tinyurl.com/";
 
     public String encode(String longUrl) {
       int key = longUrl.hashCode();
