@@ -3,6 +3,12 @@ package array;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 
+ * @author Moytri
+ * Problem: https://leetcode.com/problems/find-unique-binary-string/
+ *
+ */
 public class FindUniqueBinaryString {
 
 	public static void main(String[] args) {

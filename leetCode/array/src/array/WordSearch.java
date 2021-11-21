@@ -1,5 +1,10 @@
 package array;
 
+/**
+ * 
+ * @author Moytri
+ * Problem: https://leetcode.com/problems/word-search/
+ */
 public class WordSearch {
 
 	public static void main(String[] args) {
