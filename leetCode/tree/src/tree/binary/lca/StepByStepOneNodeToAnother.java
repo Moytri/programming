@@ -37,6 +37,7 @@ public class StepByStepOneNodeToAnother {
                             == pathForDest.charAt(pathForDest.length() - i - 1)) {
             ++i;
         }
+        
         return "U".repeat(pathForStart.length() - i) + pathForDest.reverse().toString().substring(i);
     }
     

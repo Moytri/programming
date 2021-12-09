@@ -2,6 +2,12 @@ package dp;
 
 import java.util.Arrays;
 
+/**
+ * 
+ * @author Moytri
+ * Problem: https://leetcode.com/problems/minimum-falling-path-sum/
+ *
+ */
 public class MinimumFailingPath {
 	int [][] dp; int row; int col;
 	public static void main(String[] args) {
