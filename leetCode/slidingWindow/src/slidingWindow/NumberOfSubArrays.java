@@ -1,10 +1,17 @@
 package slidingWindow;
 
+/**
+ * 
+ * @author Moytri
+ * Problem: https://leetcode.com/problems/count-number-of-nice-subarrays/
+ *
+ */
 public class NumberOfSubArrays {
 
 	public static void main(String[] args) {
 		NumberOfSubArrays numberOfSubArrays = new NumberOfSubArrays();
-		System.out.println(numberOfSubArrays.numberOfSubarrays(new int[] {1,1,2,1,2,1}, 3));
+		//System.out.println(numberOfSubArrays.numberOfSubarrays(new int[] {1,1,2,1,2,1}, 3));
+		System.out.println(numberOfSubArrays.numberOfSubarrays(new int[] {2,2,2,1,2,2,1,2,2,2}, 2));
 	}
 	
 	public int numberOfSubarrays(int[] nums, int k) {
