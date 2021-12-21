@@ -15,31 +15,27 @@ public class NumberOfProvices {
 
 	}
 	
-	 public int findCircleNum(int[][] isConnected) {
-	        int row = isConnected.length; int col = isConnected[0].length;
-	        int count = 0;
-	        
-	        for (int i = 0; i < row; i++) {
-	            for (int j = 0; j < col; j++) {
-	                if (isConnected[i][j] == 1) {
-	                    dfs(isConnected, i, j, row, col);
-	                    count++;
-	                }
-	            }
-	        }
-	        
-	        return count;
-	    }
-	    
-	    public void dfs(int[][] isConnected, int i, int j, int row, int col) {
-	        if (i < 0 || i >= row || j < 0 || j >= col || isConnected[i][j] != 1) return;
-	        
-	        isConnected[i][j] = 0;
-	        
-	        dfs(isConnected, i + 1, j, row, col);
-	        dfs(isConnected, i - 1, j, row, col);
-	        dfs(isConnected, i, j + 1, row, col);
-	        dfs(isConnected, i, j - 1, row, col);
-	    }	
-
+	public int findCircleNum(int[][] isConnected) {
+        int row = isConnected.length; int col = isConnected[0].length;
+        int count = 0;
+        int[] visited = new int[row];
+        
+        for (int i = 0; i < row; i++) {
+            if (visited[i] == 0) {
+                dfs(isConnected, visited, i);
+                count++;
+            }
+        }
+        
+        return count;
+    }
+    
+    public void dfs(int[][] isConnected, int[] visited, int i) {
+        for (int j = 0; j < isConnected.length; j++) {
+            if (isConnected[i][j] == 1 && visited[j] == 0) {
+                visited[j] = 1;
+                dfs(isConnected, visited, j);
+            }
+        }
+    }	 
 }
