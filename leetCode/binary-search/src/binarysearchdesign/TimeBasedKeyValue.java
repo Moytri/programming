@@ -5,11 +5,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 
+ * @author Moytri
+ * Problem: https://leetcode.com/problems/time-based-key-value-store/
+ */
 public class TimeBasedKeyValue {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		TimeBasedKeyValue timeBasedKeyValue  = new TimeBasedKeyValue();
+		// sample Input : ["TimeMap","set","get","get","set","get","get"]
+		// [[],["foo","bar",1],["foo",1],["foo",3],["foo","bar2",4],["foo",4],["foo",5]]
 	}
 	
  	class Data {
