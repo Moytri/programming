@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 
+ * @author Moytri
+ * Problem: https://leetcode.com/problems/find-if-path-exists-in-graph/
+ *
+ */
 public class PathExistsInGraph {
 
 	public static void main(String[] args) {

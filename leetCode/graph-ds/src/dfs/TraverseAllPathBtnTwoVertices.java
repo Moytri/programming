@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 
- * @author https://leetcode.com/problems/all-paths-from-source-to-target/discuss/118713/Java-DFS-Solution
+ * @author https://leetcode.com/problems/all-paths-from-source-to-target/discuss/412377/Java-Iterative-with-Stack-and-Queue-and-statistics-comparing-Iterative-vs-Recursive-speeds
  * Problem: https://leetcode.com/problems/all-paths-from-source-to-target/
  *
  */
